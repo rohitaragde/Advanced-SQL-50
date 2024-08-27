@@ -13,6 +13,20 @@ create table Variables
   operator enum('<','>','='),
   right_operand varchar(10),
   primary key( left_operand,operator,right_operand))
+
+
+insert into Variables values('x',66)
+insert into Variables values('y',77)
+
+
+
+insert into Expressions (left_operand, operator, right_operand) values ('x', '>', 'y');
+insert into Expressions (left_operand, operator, right_operand) values ('x', '<', 'y');
+insert into Expressions (left_operand, operator, right_operand) values ('x', '=', 'y');
+insert into Expressions (left_operand, operator, right_operand) values ('y', '>', 'x');
+insert into Expressions (left_operand, operator, right_operand) values ('y', '<', 'x');
+insert into Expressions (left_operand, operator, right_operand) values ('y', '=', 'x');
+
   
   select * from Variables
   
