@@ -22,17 +22,17 @@ create table Transactions
  insert into Transactions values(5,900003,6000,'2020-08-07') 
  insert into Transactions values(6,900003,6000,'2020-09-07') 
  insert into Transactions values(7,900003,-4000,'2020-09-11')
- 
- select * from Users
 
- select * from Transactions
-
-/*Write a solution to report the name and balance of users
+ /*Write a solution to report the name and balance of users
 with a balance higher than 10000. 
 The balance of an account is equal to the
 sum of the amounts of all transactions involving that account.
 Return the result table in any order.
 */
+ 
+ select * from Users
+
+ select * from Transactions
 
 select u.nname,
        sum(t.amount) as balance 
