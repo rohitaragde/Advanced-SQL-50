@@ -14,12 +14,13 @@ create table ActorDirector
  insert into ActorDirector values(2,1,5)
  insert into ActorDirector values(2,1,6)
 
- select * from ActorDirector
 
 /*Write a solution to find all the pairs 
 (actor_id, director_id) where the actor has 
 cooperated with the director at least three times.
 Return the result table in any order.*/
+
+ select * from ActorDirector
 
 select actor_id,director_id 
 from ActorDirector
