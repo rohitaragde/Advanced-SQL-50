@@ -28,12 +28,13 @@ create table TVProgram
   insert into Content values(4,'Alaadin','Y','Movies')
   insert into Content values(5,'Cinderella','Y','Movies')
      
-     
-  select * from TVProgram
-  select * from Content
  
 /*Write a solution to report the distinct titles of the kid-friendly movies streamed in June 2020.
 Return the result table in any order.*/
+
+      
+  select * from TVProgram
+  select * from Content
 
 select distinct title from Content c join TVProgram t
 on c.content_id=t.content_id
