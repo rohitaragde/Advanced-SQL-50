@@ -11,6 +11,9 @@ insert into Cinema101 values(1)
 insert into Cinema101 values(1)
 insert into Cinema101 values(1)
 
+ /*Find all the consecutive available seats in the cinema.
+Return the result table ordered by seat_id in ascending order.*/
+ 
 select * from Cinema101
 
 select distinct c.seat_id from 
