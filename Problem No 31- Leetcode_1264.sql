@@ -52,7 +52,7 @@ union all
 select user2_id as [user_id] from Friendship1 where user1_id =1)
 
 
-select page_id as recommended_page 
+select distinct page_id as recommended_page 
 from T join Likes l on T.[user_id]=l.[user_id] 
 where page_id not in (select page_id from Likes where [user_id]=1)
 
