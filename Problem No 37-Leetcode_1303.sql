@@ -19,7 +19,7 @@ Return the result table in any order.
 
 select * from Emp 
 
-select e1.emp_id, count(e1.team_id) as team_size
+select e1.emp_id, count(e1.emp_id) as team_size
 from Emp e1 left join Emp e2
 on e1.team_id=e2.team_id
 group by e1.emp_id 
