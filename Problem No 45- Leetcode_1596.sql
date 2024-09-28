@@ -61,3 +61,21 @@ from CTE join Products1050 p
 on CTE.productid=p.product_id
 where rnk=1
 
+Better Approach:-
+
+with cte as
+(
+select 
+o.customer_id as customer_id,
+p.product_id as product_id,
+p.product_name as product_name,
+rank() over(partition by o.customer_id order by count(o.product_id) desc) as rnk
+from Products1050 p join Orders1050 o
+on p.product_id=o.product_id
+group by customer_id,p.product_id,p.product_name
+)
+
+select distinct customer_id,product_id,product_name
+from cte
+where rnk=1
+
