@@ -56,6 +56,24 @@ create table Customers1
   where rk<=3
   order by customer_name,customer_id,order_date desc
 
+Alternative Better Approach:-
+
+with cte as
+(
+select c.customer_name as customer_name,
+       c.customer_id as customer_id,
+	   o.order_id as order_id,
+	   o.order_date as order_date,
+dense_rank() over(partition by o.customer_id order by o.order_date desc) as rnk
+from Customers1 c join Orders1 o
+on c.customer_id=o.customer_id
+)
+
+
+select customer_name,customer_id,order_id,order_date
+from cte where rnk<=3
+order by customer_name,customer_id,order_date desc 
+
 
 
 
